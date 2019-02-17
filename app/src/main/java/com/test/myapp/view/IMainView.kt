@@ -8,5 +8,4 @@ interface IMainView {
     fun hideLoading()
     fun onGetSuccessResult(videoInfo: VideoInfo)
     fun onGetFailureResult(message: String)
-    fun onLoginResultSuccess()
 }

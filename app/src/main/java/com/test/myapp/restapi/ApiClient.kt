@@ -1,4 +1,4 @@
-package com.rlite.amitbhadana.restapi
+package com.test.myapp.restapi
 
 import com.test.myapp.Constant.APP_BASE_URL
 import okhttp3.OkHttpClient
