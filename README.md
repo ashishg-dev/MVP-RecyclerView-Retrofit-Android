@@ -4,4 +4,4 @@ Get the data from api and display in recyclerview with MVP (Kotlin)
 
 Output:
 
-![alt text](https://github.com/ashishgupta191193/MVP-RecyclerView-Retrofit-Android/blob/master/output1.jpeg)
+<img src="https://github.com/ashishgupta191193/MVP-RecyclerView-Retrofit-Android/blob/master/output1.jpeg" height="100" width="100">
