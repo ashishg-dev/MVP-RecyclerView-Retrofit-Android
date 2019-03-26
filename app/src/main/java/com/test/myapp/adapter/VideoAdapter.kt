@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import android.widget.Filter
 import android.widget.Filterable
 import com.squareup.picasso.Picasso
@@ -76,6 +77,7 @@ class VideoAdapter : RecyclerView.Adapter<VideoAdapter.ViewHolder>, Filterable {
         holder.itemView.textViewVideoDate.text = data.get(position).video_date
         holder.itemView.textViewViews.text = data.get(position).views + " views -"
         holder.itemView.textViewDuration.text = data.get(position).duration
+        holder.itemView.checkBoxTest.isChecked = data.get(position).isVideoChecked
         if (data.get(position).img_url.trim().length > 0) {
             Picasso.get().load(data.get(position).img_url)
                 .into(holder.itemView.imageViewThumbnail)
@@ -83,6 +85,20 @@ class VideoAdapter : RecyclerView.Adapter<VideoAdapter.ViewHolder>, Filterable {
 /*            holder.itemView.imageViewThumbnail.setImageDrawable(ContextCompat.getDrawable(context,
                     R.drawable.bg_default_image))*/
         }
+
+        holder.itemView.checkBoxTest.setOnClickListener(View.OnClickListener {
+            if(data.get(position).isVideoChecked){
+                holder.itemView.checkBoxTest.isChecked=false
+                data.get(position).isVideoChecked=false
+            }else{
+                holder.itemView.checkBoxTest.isChecked=true
+                data.get(position).isVideoChecked=true
+
+            }
+            notifyDataSetChanged()
+
+        })
+
 
     }
 
