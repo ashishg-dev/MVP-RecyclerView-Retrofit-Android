@@ -11,10 +11,13 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.test.myapp.R
 import com.test.myapp.adapter.VideoAdapter
 import com.test.myapp.modal.VideoInfo
+import com.test.myapp.modal.VideoList
 import com.test.myapp.presenter.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), IMainView {
+
+
 
     private lateinit var materialDialog: MaterialDialog
     private lateinit var mainPresenter: MainPresenter
@@ -35,7 +38,7 @@ class MainActivity : AppCompatActivity(), IMainView {
         videoAdapter = VideoAdapter(baseContext)
         recyclerView.adapter = videoAdapter
 
-        mainPresenter.getDataFromServer()
+        mainPresenter.callDummydata();
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -88,6 +91,12 @@ class MainActivity : AppCompatActivity(), IMainView {
         videoAdapter.notifyDataSetChanged()
 
     }
+
+    override fun onDummyDataResult(videoList: ArrayList<VideoList>) {
+        videoAdapter.setDataValue(videoList)
+        videoAdapter.notifyDataSetChanged()
+    }
+
 
     override fun onGetFailureResult(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

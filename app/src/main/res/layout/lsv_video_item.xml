@@ -9,12 +9,14 @@
 
     <RelativeLayout
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="180dp">
 
         <ImageView
                 android:id="@+id/imageViewThumbnail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:scaleType="centerCrop"/>
 
         <TextView
@@ -38,14 +40,17 @@
             android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
+
         <ImageView
-                android:layout_width="48dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
-        android:background="@android:color/black"/>
+                android:layout_weight="1"
+                android:background="@android:color/black"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="0.3"
                 android:orientation="vertical">
 
             <TextView
@@ -87,7 +92,13 @@
             </LinearLayout>
 
         </LinearLayout>
-
+        <CheckBox
+                android:text="@null"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_height="34dp" android:id="@+id/checkBoxTest" />
     </LinearLayout>
 
 </LinearLayout>
